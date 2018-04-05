@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="box">
+      <div class="box-header">
+        <h3 class="box-title">Notícias cadastradas</h3>
+
+        <div class="box-tools">
+            <div class="input-group input-group-sm" style="width: 150px;">
+
+              <div class="input-group-btn">
+                <a [routerLink]="['/noticias/novo']" class="btn btn-success"><i class="fa fa-plus"></i> Novo</a>
+              </div>
+            </div>
+          </div> 
+      </div>
+      <!-- /.box-header -->
+      <div class="box-body table-responsive no-padding">
+        <table class="table table-hover">
+          <tr>
+            <th>#</th>
+            <th>Titulo</th>
+            <th>Data</th>
+            <th>Status</th>
+            <th>Curtidas</th>
+            <th>Comentários</th>
+            <th>Ações</th>
+          </tr>
+          <tr *ngFor="let registro of registros">
+            <td>{{registro.id}}</td>
+            <td>{{registro.titulo}}</td>
+            <td>{{registro.data}}</td>
+            <td>
+              <span *ngIf="registro.ativo" class="label label-success">Publicada</span>
+              <span *ngIf="!registro.ativo" class="label label-danger">Não Publicada</span>
+            </td>
+            <td>{{registro.likes}}</td>
+            <td><button type="button" class="btn btn-primary"><i class="fa fa-comments-o"></i> Ver [10]</button></td>
+            <td>
+              <a [routerLink]="['/noticias',registro.id, 'editar']" class="btn btn-default"> <i class="fa fa-edit"></i> Editar</a>
+              <a href="javascript:void(0)" (click)="openModalConfirmDelete(registro)" class="btn btn-danger"> <i class="fa fa-trash"></i> Excluir</a>
+            </td>
+          </tr>
+          
+        </table>
+      </div>
+      <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+  </div>
+</div>
+
+<div class="modal fade" id="modal-default" #divModalDelete>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Confirmação de Exclusão</h4>
+      </div>
+      <div class="modal-body">
+        <p>Deseja realmente excluir este registro? Esta ação não poderá ser desfeita.&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancelar</button>
+        <button (click)="destroy()" type="button" class="btn btn-danger">Sim, Excluir</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

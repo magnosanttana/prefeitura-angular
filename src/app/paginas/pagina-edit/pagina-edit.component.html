@@ -1,0 +1,69 @@
+<section class="content-header">
+    <h1>
+      Páginas
+      <small>Gerenciamento de páginas</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li ><a [routerLink]="['/']"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li ><a [routerLink]="['/paginas']"> Páginas</a></li>
+      <li class="active"><a href="#"> Edição</a></li>
+    </ol>
+  </section>
+
+  <!-- Main content -->
+  <section class="content container-fluid">
+
+      <div class="row">
+          <div class="col-md-12">
+              <!-- general form elements -->
+              <div class="box box-primary ">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Edição</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form role="form-horizontal" >
+                  <div class="box-body">
+                      <!-- <div class="form-group has-success">
+                          <label class="control-label" for="inputSuccess"> Titulo</label>
+                          <input type="text" class="form-control" id="inputSuccess" placeholder="O Município" readonly>
+                          <span class="help-block">Help block with success</span>
+                      </div>-->
+                      <div class="form-group">
+                              <label class="control-label" for="titulo"> Titulo</label>
+                              <input type="text"  class="form-control" id="titulo" name="titulo" [(ngModel)]="pagina.titulo" readonly>
+                       </div>
+                    <div class="form-group">
+                        <label for="conteudo">Conteúdo</label>
+                      <ckeditor
+                        name = "conteudo"
+                        [(ngModel)]="pagina.conteudo"
+                        debounce="500">
+                      </ckeditor>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputFile">Imagem principal</label>
+                      <input type="file" id="exampleInputFile">
+    
+                      <!-- <p class="help-block">Example block-level help text here.</p> -->
+                    </div>
+                    <div class="checkbox">
+                      <label for="ativo">
+                        <input name="ativo" type="checkbox" [(ngModel)]="pagina.ativo"> Página Publicada
+                      </label>
+                    </div>
+                  </div>
+                  <!-- /.box-body -->
+    
+                  <div class="box-footer">
+                    <button type="submit" (click)="save()" class="btn btn-primary">Salvar</button>
+                    <a [routerLink]="['/paginas']" class="btn btn-default">Cancelar</a>
+                  </div>
+                </form>
+              </div>
+              <!-- /.box -->
+              </div>
+      </div>
+
+
+  </section>

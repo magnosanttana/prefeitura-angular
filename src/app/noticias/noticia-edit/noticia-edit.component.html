@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="col-md-12">
+        <!-- general form elements -->
+        <div class="box box-primary ">
+          <div class="box-header with-border">
+            <h3 class="box-title">Edição</h3>
+          </div>
+          <!-- /.box-header -->
+          <!-- form start -->
+          <form role="form-horizontal" (submit)="save()" method="POST">
+            <div class="box-body">
+                <!-- <div class="form-group has-success">
+                    <label class="control-label" for="inputSuccess"> Titulo</label>
+                    <input type="text" class="form-control" id="inputSuccess" placeholder="O Município" readonly>
+                    <span class="help-block">Help block with success</span>
+                </div>-->
+              <div class="form-group">
+                      <label class="control-label" for="titulo"> Titulo</label>
+                      <input type="text"  class="form-control" id="titulo" name="titulo" [(ngModel)]="registro.titulo">
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="subtitulo"> Subtitulo</label>
+                <input type="text"  class="form-control" id="subtitulo" name="subtitulo" [(ngModel)]="registro.subtitulo">
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="data"> Data</label>
+                <input type="date" class="form-control" id="data" name="data" [(ngModel)]="registro.data">
+              </div>
+              <div class="form-group">
+                  <label for="conteudo">Conteúdo</label>
+                <ckeditor
+                  name = "conteudo"
+                  [(ngModel)]="registro.conteudo"
+                  debounce="500">
+                </ckeditor>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">Imagem principal</label>
+                <input type="file" id="exampleInputFile">
+
+                <!-- <p class="help-block">Example block-level help text here.</p> -->
+              </div>
+              <div class="checkbox">
+                <label for="ativo">
+                  <input name="ativo" type="checkbox" [(ngModel)]="registro.ativo"> Página Publicada
+                </label>
+              </div>
+            </div>
+            <!-- /.box-body -->
+
+            <div class="box-footer">
+              <button type="submit" class="btn btn-primary">Salvar</button>
+              <a [routerLink]="['/obras']" class="btn btn-default">Cancelar</a>
+            </div>
+          </form>
+        </div>
+        <!-- /.box -->
+        </div>
+</div> 

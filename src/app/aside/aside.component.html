@@ -32,17 +32,17 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Suas opções</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="index.html"><i class="fa fa-bar-chart"></i> <span>Dashboard</span></a></li>
-        <li ><a href="paginas.html"><i class="fa fa-clone"></i> <span>Páginas</span></a></li>
-        <li ><a href="vereadores.html"><i class="fa fa-users"></i> <span>Vereadores</span></a></li>
-        <li><a href="secretarias.html"><i class="fa fa-tag"></i> <span>Secretarias</span></a></li>
-        <li><a href="obras-publicas.html"><i class="fa fa-industry"></i> <span>Obras públicas</span></a></li>
-        <li><a href="licitacoes.html"><i class="fa fa-clipboard"></i> <span>Licitações</span></a></li>
-        <li><a href="noticias.html"><i class="fa fa-newspaper-o"></i> <span>Notícias</span></a></li>
-        <li><a href="agenda-eventos.html"><i class="fa fa-calendar"></i> <span>Agenda de eventos</span></a></li>
-        <li><a href="tv-prefeitura.html"><i class="fa fa-tv"></i> <span>TV Prefeitura</span></a></li>
-        <li><a href="alo-prefeitura.html"><i class="fa  fa-bullhorn"></i> <span>Alô Prefeito</span></a></li>
-        <li><a href="#"><i class="fa fa-folder-open"></i> <span>Portal Transparência</span></a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/dashboard']"><i class="fa fa-bar-chart"></i> <span>Dashboard</span></a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/paginas']"><i class="fa fa-clone"></i> <span>Páginas</span></a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/vereadores']"><i class="fa fa-users"></i> <span>Vereadores</span></a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/secretarias']"><i class="fa fa-tag"></i> <span>Secretarias</span></a></li>
+        <li routerLinkActive="active"><a href="#"><i class="fa fa-industry"></i> <span>Obras públicas</span></a></li>
+        <li routerLinkActive="active"><a href="#"><i class="fa fa-clipboard"></i> <span>Licitações</span></a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/noticias']"><i class="fa fa-newspaper-o"></i> <span>Notícias</span></a></li>
+        <li routerLinkActive="active"><a href="#"><i class="fa fa-calendar"></i> <span>Agenda de eventos</span></a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/tv-prefeitura']"><i class="fa fa-tv"></i> <span>TV Prefeitura</span></a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/alo-prefeito']"><i class="fa  fa-bullhorn"></i> <span>Alô Prefeito</span></a></li>
+        <li routerLinkActive="active" ><a href="#"><i class="fa fa-folder-open"></i> <span>Portal Transparência</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Configurações</span>
             <span class="pull-right-container">
